@@ -15,6 +15,8 @@ public:
     explicit AnalizaDialog(QWidget *parent = nullptr);
     ~AnalizaDialog();
 
+
+
 private:
     Ui::AnalizaDialog *ui;
 };

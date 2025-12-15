@@ -12,3 +12,7 @@ AnalizaDialog::~AnalizaDialog()
 {
     delete ui;
 }
+
+
+
+

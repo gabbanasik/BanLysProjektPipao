@@ -6,14 +6,44 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>934</width>
+    <height>599</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QPushButton" name="wsteczBtnA">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>83</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;-</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>wsteczBtnA</sender>
+   <signal>clicked()</signal>
+   <receiver>AnalizaDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>67</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>218</x>
+     <y>39</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
