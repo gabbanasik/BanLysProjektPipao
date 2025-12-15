@@ -23,7 +23,7 @@ void MainWindow::on_analizaBtn_clicked()
     oknoAnalizy.exec();
 }
 
-
+//ala
 void MainWindow::on_wplywyBtn_clicked()
 {
     WplywyDialog oknoWplywow(this);
