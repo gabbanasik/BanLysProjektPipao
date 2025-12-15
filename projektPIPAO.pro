@@ -9,14 +9,23 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    analizadialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    wplywydialog.cpp \
+    wydatkidialog.cpp
 
 HEADERS += \
-    mainwindow.h
+    analizadialog.h \
+    mainwindow.h \
+    wplywydialog.h \
+    wydatkidialog.h
 
 FORMS += \
-    mainwindow.ui
+    analizadialog.ui \
+    mainwindow.ui \
+    wplywydialog.ui \
+    wydatkidialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
