@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     analizadialog.cpp \
+    budgetcontroller.cpp \
     main.cpp \
     mainwindow.cpp \
     wplywydialog.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     analizadialog.h \
+    budgetcontroller.h \
     mainwindow.h \
     wplywydialog.h \
     wydatkidialog.h
