@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     analizadialog.cpp \
     budgetcontroller.cpp \
+    databasemanager.cpp \
     main.cpp \
     mainwindow.cpp \
     wplywydialog.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 HEADERS += \
     analizadialog.h \
     budgetcontroller.h \
+    databasemanager.h \
     mainwindow.h \
     wplywydialog.h \
     wydatkidialog.h

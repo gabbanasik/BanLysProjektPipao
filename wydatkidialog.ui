@@ -117,7 +117,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>CENA</string>
+    <string>KWOTA</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="kwotaWY">
