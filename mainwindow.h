@@ -35,6 +35,7 @@ private:
    // AnalizaDialog *m_analizaDialog = nullptr;
     WplywyDialog *m_wplywyDialog = nullptr;
     WydatkiDialog *m_wydatkiDialog = nullptr;
+    void aktualizujBilans();
 };
 
 #endif // MAINWINDOW_H

@@ -31,7 +31,7 @@
      <number>100</number>
     </property>
     <item>
-     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,1,1,1,0">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,1,1,1,0">
       <item>
        <spacer name="verticalSpacer">
         <property name="orientation">
@@ -55,6 +55,32 @@
         </property>
         <property name="text">
          <string>BUDŻET DOMOWY</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelBilans">
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+          <italic>true</italic>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+        <property name="text">
+         <string>0.00 zł</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>

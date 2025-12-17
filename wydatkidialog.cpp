@@ -2,6 +2,10 @@
 #include "ui_wydatkidialog.h"
 #include <QMessageBox>
 #include <QDoubleValidator>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QMessageBox>
+#include <QDebug>
 
 WydatkiDialog::WydatkiDialog(BudgetController *controller, QWidget *parent) :
     QDialog(parent),
@@ -26,15 +30,41 @@ WydatkiDialog::~WydatkiDialog()
 // Logika dodawania wydatku
 void WydatkiDialog::on_dodajWY_clicked()
 {
-    QString text = ui->kwotaWY->text();
+    QString kwota = ui->kwotaWY->text();
+    QString kategoria = ui->kategorieWY->currentText();
+    QString data = ui->dataWY->date().toString("yyyy-MM-dd");
+    QString opis = ui->opisWY->text();
     bool ok;
-    double amount = text.toDouble(&ok);
+    double amount = kwota.toDouble(&ok);
 
     if (!ok || amount <= 0.0) {
-        if (!text.isEmpty()) {
+        if (!kwota.isEmpty()) {
             QMessageBox::warning(this, "Błąd", "Wprowadź poprawną kwotę większą od zera.");
         }
         return;
+    }
+
+    //Przygotowanie zapytania SQL
+    QSqlQuery query;
+    // Używamy składni :nazwa_parametru, to bezpieczne podejście (chroni przed błędami SQL)
+    query.prepare("INSERT INTO Wydatki (kwota, kategoria, data, opis) "
+                  "VALUES (:kwota, :kategoria, :data, :opis)");
+
+    // 3. Podstawienie wartości pod parametry
+    query.bindValue(":kwota", kwota);
+    query.bindValue(":kategoria", kategoria);
+    query.bindValue(":data", data);
+    query.bindValue(":opis", opis);
+
+    // 4. Wykonanie zapytania
+    if (query.exec()) {
+        // Sukces
+        QMessageBox::information(this, "Sukces", "Wydatek został zapisany.");
+        this->accept(); // To zamyka okno i zwraca wynik 'QDialog::Accepted'
+    } else {
+        // Błąd
+        QMessageBox::critical(this, "Błąd Bazy", "Nie udało się zapisać:\n" + query.lastError().text());
+        qDebug() << "SQL Error:" << query.lastError().text();
     }
 
     m_controller->addExpense(amount);

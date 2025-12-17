@@ -2,6 +2,10 @@
 #include "ui_wplywydialog.h"
 #include <QMessageBox>
 #include <QDoubleValidator>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QMessageBox>
+#include <QDebug>
 
 WplywyDialog::WplywyDialog(BudgetController *controller, QWidget *parent) :
     QDialog(parent),
@@ -26,15 +30,33 @@ WplywyDialog::~WplywyDialog()
 // Logika dodawania wpływu
 void WplywyDialog::on_dodajWP_clicked()
 {
-    QString text = ui->kwotaWP->text();
+    QString kwota = ui->kwotaWP->text();
+    QString data = ui->dataWP->date().toString("yyyy-MM-dd");
+    QString opis = ui->opisWP->text();
     bool ok;
-    double amount = text.toDouble(&ok);
+    double amount = kwota.toDouble(&ok);
 
     if (!ok || amount <= 0.0) {
-        if (!text.isEmpty()) {
+        if (!kwota.isEmpty()) {
             QMessageBox::warning(this, "Błąd", "Wprowadź poprawną kwotę większą od zera.");
         }
         return;
+    }
+
+    QSqlQuery query;
+    // ZMIANA: Tabela Wplywy
+    query.prepare("INSERT INTO Wplywy (kwota, data, opis) "
+                  "VALUES (:kwota, :data, :opis)");
+
+    query.bindValue(":kwota", kwota);
+    query.bindValue(":data", data);
+    query.bindValue(":opis", opis);
+
+    if (query.exec()) {
+        QMessageBox::information(this, "Sukces", "Wpływ został zapisany.");
+        this->accept();
+    } else {
+        QMessageBox::critical(this, "Błąd Bazy", "Nie udało się zapisać:\n" + query.lastError().text());
     }
 
     m_controller->addInfluence(amount);
