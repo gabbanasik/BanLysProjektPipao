@@ -21,4 +21,4 @@ private:
     Ui::AnalizaDialog *ui;
 };
 
-#endif // ANALIZADIALOG_H
+#endif

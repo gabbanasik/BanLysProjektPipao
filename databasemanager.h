@@ -12,13 +12,10 @@ class DatabaseManager
 {
 public:
     DatabaseManager();
-
-    // Funkcja do nawiązywania połączenia
     bool connectToDatabase();
 
 private:
-    // Funkcja wewnętrzna do tworzenia tabel
     bool createTables();
 };
 
-#endif // DATABASEMANAGER_H
+#endif
