@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
-        <file>pngimg.com - wallet_PNG7499.png</file>
+        <file>portfel.png</file>
+        <file>expenses.png</file>
+        <file>income.png</file>
     </qresource>
 </RCC>

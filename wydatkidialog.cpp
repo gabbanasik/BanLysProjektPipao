@@ -14,6 +14,7 @@ WydatkiDialog::WydatkiDialog(BudgetController *controller, QWidget *parent) :
 {
     ui->setupUi(this);
 
+
     // Używamy nazwy z UI (np. dodajWY)
     connect(ui->dodajWY, &QPushButton::clicked, this, &WydatkiDialog::on_dodajWY_clicked);
 

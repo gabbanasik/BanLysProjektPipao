@@ -13,7 +13,7 @@ WplywyDialog::WplywyDialog(BudgetController *controller, QWidget *parent) :
     m_controller(controller)
 {
     ui->setupUi(this);
-
+ui->dodajWP->setStyleSheet("background-color: green; color: white; border-radius: 10px;");
     // Używamy prawidłowej nazwy z UI: dodajKwote
     connect(ui->dodajWP, &QPushButton::clicked, this, &WplywyDialog::on_dodajWP_clicked);
 

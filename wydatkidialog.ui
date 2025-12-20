@@ -6,27 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
+    <width>550</width>
     <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Nowy Wydatek</string>
   </property>
-  <layout class="QVBoxLayout" name="mainLayout">
+  <layout class="QVBoxLayout" name="mainLayout" stretch="1,2,1,0">
    <property name="spacing">
-    <number>15</number>
-   </property>
-   <property name="leftMargin">
-    <number>20</number>
-   </property>
-   <property name="topMargin">
-    <number>20</number>
-   </property>
-   <property name="rightMargin">
-    <number>20</number>
-   </property>
-   <property name="bottomMargin">
     <number>20</number>
    </property>
    <item>
@@ -48,7 +36,7 @@
       <widget class="QLabel" name="label">
        <property name="font">
         <font>
-         <pointsize>12</pointsize>
+         <pointsize>14</pointsize>
          <bold>true</bold>
         </font>
        </property>
@@ -63,87 +51,135 @@
     </layout>
    </item>
    <item>
-    <layout class="QGridLayout" name="formLayout">
-     <property name="verticalSpacing">
-      <number>15</number>
+    <layout class="QHBoxLayout" name="contentLayout" stretch="3,1">
+     <property name="spacing">
+      <number>20</number>
      </property>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label_9">
-       <property name="text">
-        <string>Kwota:</string>
+     <item>
+      <layout class="QGridLayout" name="formLayout">
+       <property name="verticalSpacing">
+        <number>15</number>
        </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <layout class="QHBoxLayout" name="kwotaEntryLayout">
-       <item>
-        <widget class="QLineEdit" name="kwotaWY">
-         <property name="placeholderText">
-          <string>0.00</string>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Kwota:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QLabel" name="label_10">
+       <item row="0" column="1">
+        <layout class="QHBoxLayout" name="kwotaEntryLayout">
+         <item>
+          <widget class="QLineEdit" name="kwotaWY">
+           <property name="placeholderText">
+            <string>0.00</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>zł</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>zł</string>
+          <string>Kategoria:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="kategorieWY">
+         <item>
+          <property name="text">
+           <string>Żywność</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Transport</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Mieszkanie</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Rozrywka</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Inne</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Data:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QDateEdit" name="dataWY">
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+         <property name="date">
+          <date>
+           <year>2025</year>
+           <month>12</month>
+           <day>20</day>
+          </date>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Opis:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="opisWY">
+         <property name="placeholderText">
+          <string>np. zakupy</string>
          </property>
         </widget>
        </item>
       </layout>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_8">
-       <property name="text">
-        <string>Kategoria:</string>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>80</height>
+        </size>
        </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QComboBox" name="kategorieWY">
-       <item><property name="text"><string>Żywność</string></property></item>
-       <item><property name="text"><string>Transport</string></property></item>
-       <item><property name="text"><string>Mieszkanie</string></property></item>
-       <item><property name="text"><string>Rozrywka</string></property></item>
-       <item><property name="text"><string>Oszczędności</string></property></item>
-       <item><property name="text"><string>Inwestowanie</string></property></item>
-       <item><property name="text"><string>Osobiste</string></property></item>
-       <item><property name="text"><string>Finanse</string></property></item>
-       <item><property name="text"><string>Inne</string></property></item>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_11">
        <property name="text">
-        <string>Data:</string>
+        <string/>
        </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QDateEdit" name="dataWY">
-       <property name="calendarPopup">
+       <property name="pixmap">
+        <pixmap>:/expenses.png</pixmap>
+       </property>
+       <property name="scaledContents">
         <bool>true</bool>
        </property>
-       <property name="date">
-        <date>
-         <year>2025</year>
-         <month>12</month>
-         <day>20</day>
-        </date>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_12">
-       <property name="text">
-        <string>Opis:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="opisWY">
-       <property name="placeholderText">
-        <string>np. zakupy w Biedronce</string>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -154,6 +190,12 @@
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
     </spacer>
    </item>
    <item>
@@ -161,25 +203,36 @@
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>40</height>
+       <height>45</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-weight: bold; background-color: #e74c3c; color: white; border-radius: 5px;</string>
      </property>
      <property name="text">
       <string>DODAJ WYDATEK</string>
-     </property>
-     <property name="default">
-      <bool>true</bool>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
+ <resources/>
  <connections>
   <connection>
    <sender>wsteczWY</sender>
    <signal>clicked()</signal>
    <receiver>WydatkiDialog</receiver>
    <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>37</x>
+     <y>41</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>57</x>
+     <y>74</y>
+    </hint>
+   </hints>
   </connection>
  </connections>
 </ui>

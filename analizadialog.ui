@@ -6,46 +6,111 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>934</width>
-    <height>599</height>
+    <width>1000</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Analiza Finansowa</string>
   </property>
-  <widget class="QPushButton" name="wsteczBtnA">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>83</width>
-     <height>29</height>
-    </rect>
+  <layout class="QVBoxLayout" name="mainVerticalLayout">
+   <property name="spacing">
+    <number>15</number>
    </property>
-   <property name="text">
-    <string>&lt;-</string>
+   <property name="leftMargin">
+    <number>20</number>
    </property>
-  </widget>
-  <widget class="QWidget" name="widgetMiesiac" native="true">
-   <property name="geometry">
-    <rect>
-     <x>490</x>
-     <y>100</y>
-     <width>411</width>
-     <height>281</height>
-    </rect>
+   <property name="topMargin">
+    <number>20</number>
    </property>
-  </widget>
-  <widget class="QWidget" name="widgetKwartal" native="true">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>100</y>
-     <width>411</width>
-     <height>281</height>
-    </rect>
+   <property name="rightMargin">
+    <number>20</number>
    </property>
-  </widget>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="topLayout">
+     <item>
+      <widget class="QPushButton" name="wsteczBtnA">
+       <property name="maximumSize">
+        <size>
+         <width>80</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>← </string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="titleLabel">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>ANALIZA BUDŻETU</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>80</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="chartsGrid">
+     <property name="spacing">
+      <number>20</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QWidget" name="widgetKwartal" native="true">
+       <property name="styleSheet">
+        <string notr="true">background-color: #ffffff; border: 1px solid #dcdcdc; border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QWidget" name="widgetMiesiac" native="true">
+       <property name="styleSheet">
+        <string notr="true">background-color: #ffffff; border: 1px solid #dcdcdc; border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QWidget" name="widget" native="true">
+       <property name="styleSheet">
+        <string notr="true">background-color: #ffffff; border: 1px solid #dcdcdc; border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QWidget" name="widget_2" native="true">
+       <property name="styleSheet">
+        <string notr="true">background-color: #ffffff; border: 1px solid #dcdcdc; border-radius: 10px;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections>
@@ -56,12 +121,12 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>67</x>
-     <y>27</y>
+     <x>41</x>
+     <y>187</y>
     </hint>
     <hint type="destinationlabel">
-     <x>218</x>
-     <y>39</y>
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>

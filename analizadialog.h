@@ -25,7 +25,8 @@ private:
     QChart *m_chart;
     QChartView *m_viewMiesiac;
     QChartView *m_viewKwartal;
-
+    QChartView* createBarChart();
+    QChartView* createLineChart();
     // Metoda pomocnicza do budowania wykresu
     void setupChart();
     QChartView* createPieChart(QString tytul, double wplywy, double wydatki);
