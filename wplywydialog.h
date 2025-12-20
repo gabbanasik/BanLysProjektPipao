@@ -16,9 +16,6 @@ public:
     explicit WplywyDialog(BudgetController *controller, QWidget *parent = nullptr);
     ~WplywyDialog();
 
-public slots:
-    void updateBalanceView();
-
 private slots:
     void on_dodajWP_clicked();
 

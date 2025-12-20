@@ -35,38 +35,25 @@ void MainWindow::on_analizaBtn_clicked()
 void MainWindow::on_wplywyBtn_clicked()
 {
     if (!m_wplywyDialog) {
-
         m_wplywyDialog = new WplywyDialog(m_controller, this);
         m_wplywyDialog->setWindowTitle("Dodawanie Wpływów");
-        connect(m_controller, &BudgetController::influenceTotalChanged,
-                m_wplywyDialog, &WplywyDialog::updateBalanceView);
-        connect(m_controller, &BudgetController::expenseTotalChanged,
-                m_wplywyDialog, &WplywyDialog::updateBalanceView);
+        // USUNIĘTO: connect do updateBalanceView
     }
-    m_wplywyDialog->exec();
-    aktualizujBilans();
-    m_wplywyDialog->updateBalanceView();
-    m_wplywyDialog->show();
 
+    m_wplywyDialog->exec(); // To otwiera okno i zatrzymuje kod tutaj do czasu jego zamknięcia
+    aktualizujBilans();     // Wykona się natychmiast po zamknięciu okna wpływy
 }
-
 
 void MainWindow::on_wydatkiBtn_clicked()
 {
     if (!m_wydatkiDialog) {
         m_wydatkiDialog = new WydatkiDialog(m_controller, this);
         m_wydatkiDialog->setWindowTitle("Dodawanie Wydatków");
-        connect(m_controller, &BudgetController::expenseTotalChanged,
-                m_wydatkiDialog, &WydatkiDialog::updateBalanceView);
-        connect(m_controller, &BudgetController::influenceTotalChanged,
-                m_wydatkiDialog, &WydatkiDialog::updateBalanceView);
+        // USUNIĘTO: connect do updateBalanceView
     }
 
-    m_wydatkiDialog->exec();
-    aktualizujBilans();
-    m_wydatkiDialog->updateBalanceView();
-    m_wydatkiDialog->show();
-
+    m_wydatkiDialog->exec(); // To otwiera okno
+    aktualizujBilans();      // Wykona się natychmiast po zamknięciu okna wydatki
 }
 
 void MainWindow::aktualizujBilans()

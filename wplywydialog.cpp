@@ -65,14 +65,3 @@ void WplywyDialog::on_dodajWP_clicked()
     // ui->opisWP->clear(); // Wyczyść opis
 }
 
-// Slot aktualizujący Bilans Netto w prawym górnym rogu (caloscWP)
-void WplywyDialog::updateBalanceView()
-{
-    double totalInfluence = m_controller->getTotalInfluence();
-    double totalExpense = m_controller->getTotalExpense();
-    double balance = totalInfluence - totalExpense;
-
-    QString balanceText = QString::number(balance, 'f', 2) + " zł";
-    ui->caloscWP->setText(balanceText); // Używamy labela caloscWP
-
-}

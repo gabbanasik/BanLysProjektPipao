@@ -73,15 +73,4 @@ void WydatkiDialog::on_dodajWY_clicked()
     // ui->opisWY->clear(); // Wyczyść opis
 }
 
-// Slot aktualizujący Bilans Netto w prawym górnym rogu (caloscWY)
-void WydatkiDialog::updateBalanceView()
-{
-    double totalInfluence = m_controller->getTotalInfluence();
-    double totalExpense = m_controller->getTotalExpense();
-    double balance = totalInfluence - totalExpense;
 
-    QString balanceText = QString::number(balance, 'f', 2) + " zł";
-    ui->caloscWY->setText(balanceText); // Używamy labela caloscWY
-
-
-}

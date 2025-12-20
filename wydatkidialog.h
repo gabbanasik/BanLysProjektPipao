@@ -16,9 +16,6 @@ public:
     explicit WydatkiDialog(BudgetController *controller, QWidget *parent = nullptr);
     ~WydatkiDialog();
 
-public slots:
-    void updateBalanceView();
-
 private slots:
 
     void on_dodajWY_clicked();

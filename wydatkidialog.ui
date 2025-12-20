@@ -6,256 +6,180 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>599</width>
-    <height>423</height>
+    <width>450</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>WYDATKI</string>
+   <string>Nowy Wydatek</string>
   </property>
-  <widget class="QPushButton" name="wsteczWY">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>83</width>
-     <height>29</height>
-    </rect>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing">
+    <number>15</number>
    </property>
-   <property name="text">
-    <string>&lt;-</string>
+   <property name="leftMargin">
+    <number>20</number>
    </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>20</y>
-     <width>221</width>
-     <height>20</height>
-    </rect>
+   <property name="topMargin">
+    <number>20</number>
    </property>
-   <property name="text">
-    <string>DODAJ NOWY WYDATEK</string>
+   <property name="rightMargin">
+    <number>20</number>
    </property>
-  </widget>
-  <widget class="QComboBox" name="kategorieWY">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>150</y>
-     <width>131</width>
-     <height>28</height>
-    </rect>
+   <property name="bottomMargin">
+    <number>20</number>
    </property>
    <item>
-    <property name="text">
-     <string>Transport</string>
-    </property>
+    <layout class="QHBoxLayout" name="headerLayout">
+     <item>
+      <widget class="QPushButton" name="wsteczWY">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>←</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>DODAJ NOWY WYDATEK</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
-    <property name="text">
-     <string>Inwestowanie</string>
-    </property>
+    <layout class="QGridLayout" name="formLayout">
+     <property name="verticalSpacing">
+      <number>15</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Kwota:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <layout class="QHBoxLayout" name="kwotaEntryLayout">
+       <item>
+        <widget class="QLineEdit" name="kwotaWY">
+         <property name="placeholderText">
+          <string>0.00</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>zł</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Kategoria:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="kategorieWY">
+       <item><property name="text"><string>Żywność</string></property></item>
+       <item><property name="text"><string>Transport</string></property></item>
+       <item><property name="text"><string>Mieszkanie</string></property></item>
+       <item><property name="text"><string>Rozrywka</string></property></item>
+       <item><property name="text"><string>Oszczędności</string></property></item>
+       <item><property name="text"><string>Inwestowanie</string></property></item>
+       <item><property name="text"><string>Osobiste</string></property></item>
+       <item><property name="text"><string>Finanse</string></property></item>
+       <item><property name="text"><string>Inne</string></property></item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Data:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QDateEdit" name="dataWY">
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+       <property name="date">
+        <date>
+         <year>2025</year>
+         <month>12</month>
+         <day>20</day>
+        </date>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>Opis:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="opisWY">
+       <property name="placeholderText">
+        <string>np. zakupy w Biedronce</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
-    <property name="text">
-     <string>Oszczędności</string>
-    </property>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </spacer>
    </item>
    <item>
-    <property name="text">
-     <string>Mieszkanie</string>
-    </property>
+    <widget class="QPushButton" name="dodajWY">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>DODAJ WYDATEK</string>
+     </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
+    </widget>
    </item>
-   <item>
-    <property name="text">
-     <string>Żywność</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Rozrywka</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Osobiste</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Finanse</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Inne</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>150</y>
-     <width>91</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>KATEGORIA</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>110</y>
-     <width>63</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>KWOTA</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="kwotaWY">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>100</y>
-     <width>113</width>
-     <height>28</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_10">
-   <property name="geometry">
-    <rect>
-     <x>250</x>
-     <y>110</y>
-     <width>63</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>zł</string>
-   </property>
-  </widget>
-  <widget class="QDateTimeEdit" name="dataWY">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>190</y>
-     <width>194</width>
-     <height>29</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_11">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>190</y>
-     <width>63</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>DATA</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_12">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>240</y>
-     <width>63</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>OPIS</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="opisWY">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>240</y>
-     <width>113</width>
-     <height>28</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="caloscWY">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>40</y>
-     <width>113</width>
-     <height>28</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_13">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>10</y>
-     <width>131</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TWOJE PIENIADZE:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_14">
-   <property name="geometry">
-    <rect>
-     <x>580</x>
-     <y>50</y>
-     <width>63</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>zł</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="dodajWY">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>340</y>
-     <width>83</width>
-     <height>29</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>DODAJ</string>
-   </property>
-  </widget>
+  </layout>
  </widget>
- <resources/>
  <connections>
   <connection>
    <sender>wsteczWY</sender>
    <signal>clicked()</signal>
    <receiver>WydatkiDialog</receiver>
    <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>53</x>
-     <y>37</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>131</x>
-     <y>66</y>
-    </hint>
-   </hints>
   </connection>
  </connections>
 </ui>
