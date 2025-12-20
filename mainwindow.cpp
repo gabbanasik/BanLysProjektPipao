@@ -22,19 +22,15 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-
-/*void MainWindow::on_analizaBtn_clicked()
+void MainWindow::on_analizaBtn_clicked()
 {
     if (!m_analizaDialog) {
-        // Tworzymy dialog Analizy, przekazując mu Kontroler
-        m_analizaDialog = new AnalizaDialog(m_controller, this);
-        m_analizaDialog->setWindowTitle("Analiza Budżetu");
-        // AnalizaDialog jest podłączony do obu sygnałów w swoim konstruktorze
+
+    m_analizaDialog = new AnalizaDialog(m_controller, this);
     }
     m_analizaDialog->show();
 }
-*/
+
 
 void MainWindow::on_wplywyBtn_clicked()
 {
