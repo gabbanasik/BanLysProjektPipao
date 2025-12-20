@@ -1,34 +1,33 @@
 #ifndef ANALIZADIALOG_H
 #define ANALIZADIALOG_H
-#include"budgetcontroller.h"
-#include <QDialog>
-#include<QtCharts>
 
-namespace Ui {
-class AnalizaDialog;
-}
+#include <QDialog>
+#include <QtCharts/QChartView>
+#include "budgetcontroller.h"
+
+// Użycie makra w nagłówku pozwala na używanie klas Charts w całym pliku
+
+namespace Ui { class AnalizaDialog; }
 
 class AnalizaDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    // Konstruktor przyjmujący wskaźnik do kontrolera budżetu
     explicit AnalizaDialog(BudgetController *controller, QWidget *parent = nullptr);
     ~AnalizaDialog();
 
+    // Publiczna metoda, aby MainWindow mogło ją wywołać po dodaniu wydatku
+    void setupChart();
+
 private:
     Ui::AnalizaDialog *ui;
-    BudgetController *m_controller; // Nasz "mózg" z danymi
+    BudgetController *m_controller;
 
-    // Elementy wykresu z modułu QtCharts
-    QChart *m_chart;
-    QChartView *m_viewMiesiac;
-    QChartView *m_viewKwartal;
+    // Funkcje pomocnicze
+    QChartView* createPieChart(QString tytul, double wplywy, double wydatki);
     QChartView* createBarChart();
     QChartView* createLineChart();
-    // Metoda pomocnicza do budowania wykresu
-    void setupChart();
-    QChartView* createPieChart(QString tytul, double wplywy, double wydatki);
 };
-#endif
+
+#endif // ANALIZADIALOG_H
